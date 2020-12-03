@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="joanmiroschool.View.LoginPage">
+    <ContentPage.Content>
+          <Grid BackgroundColor="White">
+
+            <StackLayout
+
+                        Padding="20,20"
+                        x:Name="LoginStackLayout"
+                         VerticalOptions="Center"
+                         IsVisible="true">
+                <Label
+                       FontSize="Large"
+                       Text="Joan Miro School"
+                    TextColor="Gray"
+                       HorizontalTextAlignment="Center"/>
+                <Image
+                    HeightRequest="150"
+                    Margin="10,10,10,10"
+                    Source="jmlogo.png"/>
+                <Entry
+                    Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    Placeholder="Email"
+                    x:Name="loginEmail"
+                    />
+                <Entry
+                     Text="{Binding Password, Mode=TwoWay}"
+                    Placeholder="Password"
+                    x:Name="loginPassword"
+                    IsPassword="True"
+                    />
+                <Button
+                    Text="Acceder"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding CanLogin}"
+                    />
+                <StackLayout
+                     Margin="0,10,0,0"
+                    Orientation="Horizontal"
+                    >
+                    <Label
+                            FontSize="Small"
+                            Text="No tienes cuenta?"
+                           TextColor="Gray"/>
+                    <Label 
+                            FontSize="Small" Text="Registrate?"
+                           x:Name="RegisterLbl"
+                          TextColor="CadetBlue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_RegisterLbl"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout
+                VerticalOptions="Center"
+                   Padding="20,20"
+                   x:Name="RegistStackLayout"
+                   IsVisible="false">
+
+                 <Label
+                       FontSize="Large"
+                       Text="Joan Miro School"
+                    TextColor="Gray"
+                       HorizontalTextAlignment="Center"/>
+                <Image
+                    HeightRequest="150"
+                    Margin="10,10,10,10"
+                    Source="jmlogo.png"/>
+
+                 <StackLayout
+                    Orientation="Horizontal"
+                    >
+                    <Label 
+                        FontSize="Small"
+                        TextColor="Gray"
+                        Text="Ya tienes una cuneta?"/>
+                    <Label 
+                            FontSize="Small"
+                        Text="Inicia sesion?" TextColor="CadetBlue">
+                         <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_LogInLbl"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <Entry
+                    Text="{Binding Name, Mode=TwoWay}"
+                    Margin="0,10,0,0"
+                    Placeholder="Name"
+                    x:Name="registName"
+                    />
+                 <Entry
+                    Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    Placeholder="Email"
+                    x:Name="registEmail"
+                    />
+                <Entry
+                    Text="{Binding Phone, Mode=TwoWay}"
+                    Keyboard="Telephone"
+                    Placeholder="Phone"
+                    MaxLength="11"
+                    x:Name="registPhone"
+                    >
+
+             
+                </Entry>
+                <Entry
+                     Text="{Binding Password, Mode=TwoWay}"
+                    Placeholder="Password"
+                    x:Name="registPassword"
+                    IsPassword="True"
+                    />
+
+                <Entry
+                     Text="{Binding ConfirmPassword, Mode=TwoWay}"
+                    Placeholder="Confirmar Password"
+                    x:Name="registConfrimPassword"
+                    IsPassword="True"
+                    />
+                <Button
+                    Text="Acceder"
+                    BackgroundColor="Black"
+                    TextColor="white"
+                    Command="{Binding RegisterCommand}"
+                    CommandParameter="{Binding CanRegister}"
+                    />
+               
+
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

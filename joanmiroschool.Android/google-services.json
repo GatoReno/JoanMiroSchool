@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "575083241288",
+    "firebase_url": "https://joanmiroapp.firebaseio.com",
+    "project_id": "joanmiroapp",
+    "storage_bucket": "joanmiroapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575083241288:android:876264410c94b7aebddd7d",
+        "android_client_info": {
+          "package_name": "com.etho.joanmiroschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575083241288-orhg8jp8mpepc4maeek82td2l81cfkqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBux9kKlc4ccneBBHgzqV8dZhPXdOFXqmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575083241288-orhg8jp8mpepc4maeek82td2l81cfkqb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "575083241288-s64vk2s1paecg4v6khjg32qqq3boa0ok.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.etho.JoanMiroApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
