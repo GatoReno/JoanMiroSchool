@@ -100,7 +100,7 @@
                     Placeholder="Email"
                     x:Name="registEmail"
                     />
-                <Entry
+                <!--<Entry
                     Text="{Binding Phone, Mode=TwoWay}"
                     Keyboard="Telephone"
                     Placeholder="Phone"
@@ -109,7 +109,7 @@
                     >
 
              
-                </Entry>
+                </Entry>-->
                 <Entry
                      Text="{Binding Password, Mode=TwoWay}"
                     Placeholder="Password"
@@ -124,7 +124,7 @@
                     IsPassword="True"
                     />
                 <Button
-                    Text="Acceder"
+                    Text="Registrar"
                     BackgroundColor="Black"
                     TextColor="white"
                     Command="{Binding RegisterCommand}"

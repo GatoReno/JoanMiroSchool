@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using joanmiroschool.Services;
 using Xamarin.Forms;
 
 namespace joanmiroschool.ViewModel
@@ -61,18 +62,7 @@ namespace joanmiroschool.ViewModel
                 OnPropertyChanged("CanRegister");
             }
         }
-        public string Phone
-        {
-            get
-            {
-                return phone_;
-            }
-            set
-            {
-                phone_ = value;
-                OnPropertyChanged("Email");
-            }
-        }
+       
 
         public bool CanLogin
         {
@@ -111,16 +101,25 @@ namespace joanmiroschool.ViewModel
             return CanRegister;
         }
 
-        private  void Register(object obj)
+        private async  void Register(object obj)
         {
             //AuthFirebase
             if (confirmPassword_ != Password)
             {
-                //await App.Current.MainPage.DisplayAlert("Error", "Las contraseñas no coniciden! ", "ok");
+                await App.Current.MainPage.DisplayAlert("Error", "Las contraseñas no coniciden! ", "ok");
             }
             else
             {
-                //await FirebaseAuthService.RegisterUser(Name, Email, Password, Phone);
+                try
+                {
+                    await FirebaseAuthService.RegisterUser(Name, Email, Password);
+                    await App.Current.MainPage.DisplayAlert("Exito","Usuario registrado, ya puedes iniciar sesion","ok");
+
+                }
+                catch (Exception ex)
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", $"{ex.ToString()} ", "ok");
+                }
             }
 
         }
@@ -130,9 +129,9 @@ namespace joanmiroschool.ViewModel
             return CanLogin;
         }
 
-        private  void Login(object param)
+        private async void Login(object param)
         {
-            //await FirebaseAuthService.AuthenticateUser(Email,Password);
+            await FirebaseAuthService.AuthenticateUser(Email,Password);
         }
 
         private void OnPropertyChanged(string propertyName)
