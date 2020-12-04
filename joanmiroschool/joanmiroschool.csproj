@@ -19,5 +19,6 @@
     <Folder Include="ViewModel\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Services\" />
+    <Folder Include="View\Tabs\" />
   </ItemGroup>
 </Project>
