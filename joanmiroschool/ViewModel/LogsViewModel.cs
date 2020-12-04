@@ -8,7 +8,7 @@ namespace joanmiroschool.ViewModel
 {
     public class LogsViewModel : INotifyPropertyChanged
     {
-        private string name_, email_, password_, confirmPassword_, phone_;
+        private string name_, email_, password_, confirmPassword_;
         private bool canLogin_, canRegister_;
         public string Email
         {

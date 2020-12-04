@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="Cuenta"
+             
+             x:Class="joanmiroschool.View.Navigation.Master">
+    <ContentPage.Content>
+
+         <StackLayout
+             BackgroundColor="#5f6a75"
+             Orientation="Vertical"
+        >
+        <Image
+                Margin="0,40,0,20"
+                Source="icon_fs.png"
+                WidthRequest="50"
+                HeightRequest="50"/>
+        
+        <Button Text="Prospectos"
+            x:Name="btnPrimera"  
+                TextColor="White"
+           />
+
+        <Button Text="Visitas"
+            x:Name="btnVisita" 
+            TextColor="White"
+           />
+
+
+        <Button Text="Cerrar Sesion"
+            x:Name="btnCerrarSes" 
+                TextColor="White"
+           />
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

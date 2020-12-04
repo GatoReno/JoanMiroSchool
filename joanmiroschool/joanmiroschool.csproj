@@ -20,5 +20,6 @@
     <Folder Include="Abstractions\" />
     <Folder Include="Services\" />
     <Folder Include="View\Tabs\" />
+    <Folder Include="View\Navigation\" />
   </ItemGroup>
 </Project>
