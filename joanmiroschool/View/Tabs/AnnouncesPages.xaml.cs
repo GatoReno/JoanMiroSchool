@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace joanmiroschool.View.Tabs
 {
-    public partial class AnnouncePage : ContentPage
+    public partial class AnnouncesPages : ContentPage
     {
-        public AnnouncePage()
+        public AnnouncesPages()
         {
             InitializeComponent();
         }
