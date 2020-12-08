@@ -1,4 +1,6 @@
 ﻿using System;
+using Acr.UserDialogs;
+using joanmiroschool.Services;
 using joanmiroschool.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +14,18 @@ namespace joanmiroschool
         public App()
         {
             InitializeComponent();
-            MainPage = new LoginPage(); 
+            
+
+            UserDialogs.Instance.ShowLoading();
+            bool au = FirebaseAuthService.IsAuthenticated();
+            if (!au)
+            {
+                MainPage = new LoginPage();
+            }
+            else {
+                MainPage = new MainPage();
+            }
+            UserDialogs.Instance.HideLoading();
         }
 
         protected override void OnStart()

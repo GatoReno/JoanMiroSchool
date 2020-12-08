@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using Acr.UserDialogs;
 using joanmiroschool.Services;
 using Xamarin.Forms;
 
@@ -100,6 +101,7 @@ namespace joanmiroschool.ViewModel
 
         private async void ResetPassword(object obj)
         {
+           
             FirebaseAuthService.RestartPassword(Email);
             await App.Current.MainPage.DisplayAlert("Exito", "Usuario registrado, ya puedes iniciar sesion", "ok");
         }
@@ -112,6 +114,7 @@ namespace joanmiroschool.ViewModel
         private async  void Register(object obj)
         {
             //AuthFirebase
+
             if (confirmPassword_ != Password)
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Las contraseñas no coniciden! ", "ok");
@@ -120,6 +123,7 @@ namespace joanmiroschool.ViewModel
             {
                 try
                 {
+                    UserDialogs.Instance.ShowLoading();
                     await FirebaseAuthService.RegisterUser(Name, Email, Password);
                     await App.Current.MainPage.DisplayAlert("Exito","Usuario registrado, ya puedes iniciar sesion","ok");
 
@@ -128,6 +132,7 @@ namespace joanmiroschool.ViewModel
                 {
                     await App.Current.MainPage.DisplayAlert("Error", $"{ex.ToString()} ", "ok");
                 }
+                UserDialogs.Instance.HideLoading();
             }
 
         }
@@ -139,7 +144,21 @@ namespace joanmiroschool.ViewModel
 
         private async void Login(object param)
         {
-            await FirebaseAuthService.AuthenticateUser(Email,Password);
+
+            UserDialogs.Instance.ShowLoading();
+            try
+            {
+               bool au =  await FirebaseAuthService.AuthenticateUser(Email, Password);
+                if (au)
+                {
+                    Application.Current.MainPage = new MainPage();
+                }
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", $"{ex.ToString()} ", "ok");
+            }
+            UserDialogs.Instance.HideLoading();
         }
 
         private void OnPropertyChanged(string propertyName)

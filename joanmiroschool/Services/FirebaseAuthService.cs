@@ -13,7 +13,7 @@ namespace joanmiroschool.Services
 
         public static async Task<bool> RegisterUser(string name, string email, string password )
         {
-            UserDialogs.Instance.ShowLoading();
+            
             try
             {
                 return await auth.RegisterUser(name, email, password);
@@ -23,12 +23,11 @@ namespace joanmiroschool.Services
                 await App.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
                 return false;
             }
-            UserDialogs.Instance.HideLoading();
+          
         }
         public static async Task<bool> AuthenticateUser(string email, string password)
         {
-            UserDialogs.Instance.ShowLoading();
-            try
+             try
             {
                 return await auth.AuthenticateUser(email, password);
             }
@@ -37,14 +36,11 @@ namespace joanmiroschool.Services
                 await App.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
                 return false;
             }
-            UserDialogs.Instance.HideLoading();
-        }
+         }
         public static bool IsAuthenticated()
         {
-            UserDialogs.Instance.ShowLoading();
-            return auth.IsAuthenticated();
-            UserDialogs.Instance.HideLoading();
-        }
+             return auth.IsAuthenticated();
+         }
 
         public static string GetCurrentUserId()
         {
