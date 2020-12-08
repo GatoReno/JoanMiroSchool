@@ -12,8 +12,7 @@ namespace joanmiroschool
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
-            //MainPage = new LoginPage();
+            MainPage = new LoginPage(); 
         }
 
         protected override void OnStart()

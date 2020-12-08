@@ -23,12 +23,18 @@
                     Text="{Binding Email, Mode=TwoWay}"
                     Placeholder="Email"
                     x:Name="loginEmail"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
                     />
                 <Entry
                      Text="{Binding Password, Mode=TwoWay}"
                     Placeholder="Password"
                     x:Name="loginPassword"
                     IsPassword="True"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
                     />
                 <Button
                     Text="Acceder"
@@ -47,10 +53,28 @@
                            TextColor="Gray"/>
                     <Label 
                             FontSize="Small" Text="Registrate?"
-                           x:Name="RegisterLbl"
+                          
                           TextColor="CadetBlue">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_RegisterLbl"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                  
+                </StackLayout>
+
+                <StackLayout
+                    Orientation="Horizontal">
+                       <Label
+                            FontSize="Small"
+                            Text="Olvidaste tu contraseña?"
+                           TextColor="Gray"/>
+                    <Label 
+                            FontSize="Small" Text="Recuperar?"
+                         
+                          TextColor="CadetBlue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ResetPassword"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>
@@ -93,28 +117,28 @@
                     Margin="0,10,0,0"
                     Placeholder="Name"
                     x:Name="registName"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
                     />
                  <Entry
                     Keyboard="Email"
                     Text="{Binding Email, Mode=TwoWay}"
                     Placeholder="Email"
                     x:Name="registEmail"
+                     TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
                     />
-                <!--<Entry
-                    Text="{Binding Phone, Mode=TwoWay}"
-                    Keyboard="Telephone"
-                    Placeholder="Phone"
-                    MaxLength="11"
-                    x:Name="registPhone"
-                    >
-
-             
-                </Entry>-->
+                 
                 <Entry
                      Text="{Binding Password, Mode=TwoWay}"
                     Placeholder="Password"
                     x:Name="registPassword"
                     IsPassword="True"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
                     />
 
                 <Entry
@@ -122,6 +146,9 @@
                     Placeholder="Confirmar Password"
                     x:Name="registConfrimPassword"
                     IsPassword="True"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
                     />
                 <Button
                     Text="Registrar"
@@ -134,6 +161,66 @@
 
             </StackLayout>
 
+
+
+        <StackLayout
+
+                Padding="20,20"
+                x:Name="ResetPasswordStackLayout"
+                    VerticalOptions="Center"
+                    IsVisible="false">
+                <Label
+                       FontSize="Large"
+                       Text="Recuperar contraseña"
+                    TextColor="Gray"
+                       HorizontalTextAlignment="Center"/>
+
+              <StackLayout
+                   Margin="0,50,0,0"
+                Orientation="Horizontal">
+                       <Label 
+                       FontSize="Small"
+                       Text="Ingrese su correo para recibir un email en donde usted podra reestablecer su contraseña"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+                <Entry
+                   
+                    Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    Placeholder="Email"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="LightGray"
+                    />
+              
+                <Button
+                    x:Name="tbnResetPassword"
+                    Text="Recuperar"
+                    BackgroundColor="Black"
+                    TextColor="White" 
+                    />
+                <StackLayout
+                     Margin="0,10,0,0"
+                    Orientation="Horizontal"
+                    >
+                    <Label 
+                            FontSize="Small"
+                            Text="ya tienes cuenta?"
+                           TextColor="Gray"/>
+                    <Label 
+                            FontSize="Small" Text="Regresar?"
+                            
+                          TextColor="CadetBlue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_LogInLbl"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+          
+
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -140,6 +140,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\jmlogo.png" />
     <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\annoucementicon_w.png" />
+    <BundleResource Include="Resources\eventsicon_w.png" />
+    <BundleResource Include="Resources\gearicon_w.png" />
+    <BundleResource Include="Resources\kidsicon_w.png" />
+    <BundleResource Include="Resources\logouticon.png" />
+    <BundleResource Include="Resources\statementicon_w.png" />
+    <BundleResource Include="Resources\usericon_w.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

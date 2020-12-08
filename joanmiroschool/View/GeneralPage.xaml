@@ -3,11 +3,13 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            BackgroundColor="White"
-           xmlns:mex="clr-namespace:joanmiroschool.View.Tabs"
+             x:Name="tabBottom"
+           xmlns:tabx="clr-namespace:joanmiroschool.View.Tabs"
             x:Class="joanmiroschool.View.GeneralPage">
     <!--xme can be added as references or inline-->
-    <mex:StudentsPage Title="estudiantes"  />
-    <mex:EventsPage Title="eventos" />
+    <tabx:StudentsPage Title="Alumnos"/>
+    <tabx:EventsPage Title="Eventos"/>
+    <tabx:AnnouncesPages Title="Anuncios"/>
     
+   
 </TabbedPage>

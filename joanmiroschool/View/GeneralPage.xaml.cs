@@ -15,6 +15,9 @@ namespace joanmiroschool.View
         public GeneralPage()
         {
             InitializeComponent();
+            tabBottom.BarBackgroundColor = Color.FromHex("#5f6a75");
+            tabBottom.BarTextColor = Color.DarkGray;
+            //tabBottom.SelectedTabColor = Color.FromHex("#272829");
         }
     }
 }

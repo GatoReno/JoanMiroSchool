@@ -87,6 +87,7 @@ namespace joanmiroschool.ViewModel
 
         public ICommand LoginCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
+        public ICommand ResetCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -94,6 +95,13 @@ namespace joanmiroschool.ViewModel
         {
             LoginCommand = new Command(Login, CanLoginExecute);
             RegisterCommand = new Command(Register, CanRegisterExecute);
+            ResetCommand = new Command(ResetPassword);
+        }
+
+        private async void ResetPassword(object obj)
+        {
+            FirebaseAuthService.RestartPassword(Email);
+            await App.Current.MainPage.DisplayAlert("Exito", "Usuario registrado, ya puedes iniciar sesion", "ok");
         }
 
         private bool CanRegisterExecute(object arg)

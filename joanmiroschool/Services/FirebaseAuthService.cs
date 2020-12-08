@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using joanmiroschool.Abstractions;
 using Xamarin.Forms;
 
@@ -12,6 +13,7 @@ namespace joanmiroschool.Services
 
         public static async Task<bool> RegisterUser(string name, string email, string password )
         {
+            UserDialogs.Instance.ShowLoading();
             try
             {
                 return await auth.RegisterUser(name, email, password);
@@ -21,9 +23,11 @@ namespace joanmiroschool.Services
                 await App.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
                 return false;
             }
+            UserDialogs.Instance.HideLoading();
         }
         public static async Task<bool> AuthenticateUser(string email, string password)
         {
+            UserDialogs.Instance.ShowLoading();
             try
             {
                 return await auth.AuthenticateUser(email, password);
@@ -33,10 +37,13 @@ namespace joanmiroschool.Services
                 await App.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
                 return false;
             }
+            UserDialogs.Instance.HideLoading();
         }
         public static bool IsAuthenticated()
         {
+            UserDialogs.Instance.ShowLoading();
             return auth.IsAuthenticated();
+            UserDialogs.Instance.HideLoading();
         }
 
         public static string GetCurrentUserId()
@@ -46,7 +53,10 @@ namespace joanmiroschool.Services
 
         public static void LogOut()
         {
+            UserDialogs.Instance.ShowLoading();
             auth.LogOut();
+
+            UserDialogs.Instance.HideLoading();
         }
 
         public async static void RestartPassword(string email)

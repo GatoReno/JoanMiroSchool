@@ -23,6 +23,13 @@ namespace joanmiroschool.View
         {
             RegistStackLayout.IsVisible = false;
             LoginStackLayout.IsVisible = true;
+            ResetPasswordStackLayout.IsVisible = false;
+        }
+
+        void TapGestureRecognizer_Tapped_ResetPassword(System.Object sender, System.EventArgs e)
+        {
+            LoginStackLayout.IsVisible = false;
+            ResetPasswordStackLayout.IsVisible = true;
         }
     }
 }
