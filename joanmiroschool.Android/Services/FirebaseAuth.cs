@@ -50,6 +50,16 @@ namespace joanmiroschool.Droid.Services
             return Firebase.Auth.FirebaseAuth.Instance.CurrentUser != null;
         }
 
+        public void LogOut()
+        {
+            Firebase.Auth.FirebaseAuth.Instance.SignOut();
+        }
+
+        public void ResetPassword(string email)
+        {
+            Firebase.Auth.FirebaseAuth.Instance.SendPasswordResetEmail(email);
+        }
+
         public async Task<bool> RegisterUser(string name, string email, string password )
         {
             try

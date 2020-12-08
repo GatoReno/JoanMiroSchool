@@ -4,9 +4,10 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             BackgroundColor="White"
+           xmlns:mex="clr-namespace:joanmiroschool.View.Tabs"
             x:Class="joanmiroschool.View.GeneralPage">
-    <!--Pages can be added as references or inline-->
-    <ContentPage Title="Tab 1"  />
-    <ContentPage Title="Tab 2" />
-    <ContentPage Title="Tab 3" />
+    <!--xme can be added as references or inline-->
+    <mex:StudentsPage Title="estudiantes"  />
+    <mex:EventsPage Title="eventos" />
+    
 </TabbedPage>

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace joanmiroschool.View
+namespace joanmiroschool.View.Tabs
 {
-    public partial class AnnouncementPage : ContentPage
+    public partial class AnnouncePage : ContentPage
     {
-        public AnnouncementPage()
+        public AnnouncePage()
         {
             InitializeComponent();
         }

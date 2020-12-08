@@ -9,5 +9,7 @@ namespace joanmiroschool.Abstractions
         Task<bool> AuthenticateUser(string email, string password);
         bool IsAuthenticated();
         string GetCurrentUserId();
+        void LogOut();
+        void ResetPassword(string email);
     }
 }

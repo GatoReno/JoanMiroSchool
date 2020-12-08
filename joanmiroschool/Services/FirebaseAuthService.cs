@@ -43,5 +43,27 @@ namespace joanmiroschool.Services
         {
             return auth.GetCurrentUserId();
         }
+
+        public static void LogOut()
+        {
+            auth.LogOut();
+        }
+
+        public async static void RestartPassword(string email)
+        {
+            try
+            {
+                auth.ResetPassword(email);
+                await App.Current.MainPage.DisplayAlert("Recuperar contraseña",
+                    $"Se ha envidado un correo de recupeacion al correo {email}"+
+                    " favor de confirmar e intentar ingresar de nuevo.",
+                    "ok");
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
+            }
+           
+        }
     }
 }
