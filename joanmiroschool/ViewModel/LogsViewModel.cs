@@ -99,11 +99,10 @@ namespace joanmiroschool.ViewModel
             ResetCommand = new Command(ResetPassword);
         }
 
-        private async void ResetPassword(object obj)
+        private  void ResetPassword(object obj)
         {
            
-            FirebaseAuthService.RestartPassword(Email);
-            await App.Current.MainPage.DisplayAlert("Exito", "Usuario registrado, ya puedes iniciar sesion", "ok");
+             FirebaseAuthService.RestartPassword(Email);
         }
 
         private bool CanRegisterExecute(object arg)

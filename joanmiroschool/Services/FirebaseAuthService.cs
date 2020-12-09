@@ -59,11 +59,19 @@ namespace joanmiroschool.Services
         {
             try
             {
-                auth.ResetPassword(email);
-                await App.Current.MainPage.DisplayAlert("Recuperar contraseña",
-                    $"Se ha envidado un correo de recupeacion al correo {email}"+
-                    " favor de confirmar e intentar ingresar de nuevo.",
-                    "ok");
+                if (string.IsNullOrEmpty(email))
+                {
+                    await App.Current.MainPage.DisplayAlert("Error",
+                        "Se requiere un email para recuperar contraseña", "ok");
+                }
+                else
+                {
+                    auth.ResetPassword(email);
+                    await App.Current.MainPage.DisplayAlert("Recuperar contraseña",
+                        $"Se ha envidado un correo de recupeacion al correo {email}" +
+                        " favor de confirmar e intentar ingresar de nuevo.",
+                        "ok");
+                }
             }
             catch (Exception ex)
             {

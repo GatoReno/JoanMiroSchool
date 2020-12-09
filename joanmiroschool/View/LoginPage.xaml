@@ -201,6 +201,7 @@
                 <Button
                     x:Name="tbnResetPassword"
                     Text="Recuperar"
+                    Command="{Binding ResetCommand}"
                     BackgroundColor="Black"
                     TextColor="White" 
                     />
