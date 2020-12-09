@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace joanmiroschool.ViewModel
 {
     public class ConfigViewModel : INotifyPropertyChanged
     {
-        private string _theme;
+        private string _theme, _accountEmail;
         public string ThemeName
         {
             get
@@ -20,9 +21,23 @@ namespace joanmiroschool.ViewModel
                 OnPropertyChanged("ThemeName");
             }
         }
+
+        public string AccountEmail
+        {
+            get
+            {
+                return _accountEmail;
+            }
+            set
+            {
+                _accountEmail = value;
+
+                OnPropertyChanged("AccountEmail");
+            }
+        }
         public ConfigViewModel()
         {
-           
+              _accountEmail = Preferences.Get("AccountEmail", string.Empty);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

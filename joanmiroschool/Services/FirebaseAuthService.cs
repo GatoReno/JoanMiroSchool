@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using joanmiroschool.Abstractions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace joanmiroschool.Services
@@ -29,7 +30,12 @@ namespace joanmiroschool.Services
         {
              try
             {
-                return await auth.AuthenticateUser(email, password);
+                bool au = await auth.AuthenticateUser(email, password);
+                if (au)
+                {
+                    Preferences.Set("AccountEmail", email);
+                }
+                return au;
             }
             catch (Exception ex)
             {
