@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using joanmiroschool.ViewModel;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -10,25 +11,33 @@ namespace joanmiroschool.View
         public ConfigPage()
         {
             InitializeComponent();
-            var prefTheme = Preferences.Get("Theme", string.Empty);
-            if (string.IsNullOrEmpty(prefTheme))
+            BindingContext = new ConfigViewModel();
+
+           
+
+            //var prefTheme = Preferences.Get("Theme", string.Empty);
+            //if (string.IsNullOrEmpty(prefTheme))
+            //{
+
+            //}
+            //else
+            //{
+            //    if (prefTheme == "Dark")
+            //    {
+            //        Application.Current.UserAppTheme = OSAppTheme.Dark;
+            //    }
+            //    else if (prefTheme == "Light")
+            //    {
+            //        Application.Current.UserAppTheme = OSAppTheme.Light;
+            //    }
+            //}
+
+
+            Application.Current.RequestedThemeChanged += (_, args) =>
             {
-
-            }
-            else
-            {
-                if (prefTheme == "Dark")
-                {
-                    Application.Current.UserAppTheme = OSAppTheme.Dark;
-                }
-                else if (prefTheme == "Light")
-                {
-                    Application.Current.UserAppTheme = OSAppTheme.Light;
-                }
-            }
-
-            
-
+                themeName.Text = args.RequestedTheme.ToString();
+            };
+            themeName.Text = Application.Current.RequestedTheme.ToString();
 
         }
         public void btnChangeTheme_Clicked(object sender, EventArgs args)

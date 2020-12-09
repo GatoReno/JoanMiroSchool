@@ -2,6 +2,7 @@
 using Acr.UserDialogs;
 using joanmiroschool.Services;
 using joanmiroschool.View;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,6 +18,24 @@ namespace joanmiroschool
             
 
             UserDialogs.Instance.ShowLoading();
+            //Themes
+            var prefTheme = Preferences.Get("Theme", string.Empty);
+            if (string.IsNullOrEmpty(prefTheme))
+            {
+
+            }
+            else
+            {
+                if (prefTheme == "Dark")
+                {
+                    Application.Current.UserAppTheme = OSAppTheme.Dark;
+                }
+                else if (prefTheme == "Light")
+                {
+                    Application.Current.UserAppTheme = OSAppTheme.Light;
+                }
+            }
+            //Auth
             bool au = FirebaseAuthService.IsAuthenticated();
             if (!au)
             {
@@ -25,6 +44,7 @@ namespace joanmiroschool
             else {
                 MainPage = new MainPage();
             }
+          
             UserDialogs.Instance.HideLoading();
         }
 

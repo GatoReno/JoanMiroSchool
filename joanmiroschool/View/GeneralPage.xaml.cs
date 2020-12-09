@@ -16,7 +16,7 @@ namespace joanmiroschool.View
         {
             InitializeComponent();
             tabBottom.BarBackgroundColor = Color.FromHex("#5f6a75");
-            tabBottom.BarTextColor = Color.DarkGray;
+            tabBottom.BarTextColor = Color.White;//.FromHex("#272829");
             //tabBottom.SelectedTabColor = Color.FromHex("#272829");
         }
     }

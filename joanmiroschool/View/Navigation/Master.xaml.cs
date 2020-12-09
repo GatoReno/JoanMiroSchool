@@ -19,6 +19,13 @@ namespace joanmiroschool.View.Navigation
             App.MasterD.IsPresented = false;
         }
 
+        void TapGestureRecognizer_Tapped_Config(System.Object sender, System.EventArgs e)
+        {
+            App.MasterD.IsPresented = false;
+            App.MasterD.Detail.Navigation.PushAsync(new ConfigPage());
+            
+        }
+
         void TapGestureRecognizer_Tapped_LogOut(System.Object sender, System.EventArgs e)
         {
             App.MasterD.IsPresented = false;

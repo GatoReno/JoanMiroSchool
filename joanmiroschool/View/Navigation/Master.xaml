@@ -9,90 +9,98 @@
     <ContentPage.Content>
 
          <StackLayout
+             
              BackgroundColor="#5f6a75"
              Orientation="Vertical"
           >
-        
+         
              <StackLayout
-                 Orientation="Horizontal"
+                  Margin="0,30"
                  >
+                     <StackLayout
+                
+                         Orientation="Horizontal"
+                         >
 
-                 <Image
-                     HeightRequest="25"
-                     WidthRequest="25"></Image>
-                  <Label 
+                         <Image
+                    
+                             HeightRequest="25"
+                             WidthRequest="25">
+
+                         </Image>
+                          <Label 
                         
-                        Text="Cuenta"
-                        TextColor="DarkGray">
-                            <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Profile"/>
-                        </Label.GestureRecognizers>
-                    </Label>
+                                Text="Cuenta"
+                                TextColor="DarkGray">
+                                    <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Profile"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-             </StackLayout>
+                     </StackLayout>
 
 
-               <StackLayout
-                 Orientation="Horizontal"
-                 >
+                       <StackLayout
+                         Orientation="Horizontal"
+                         >
 
-                 <Image
-                     HeightRequest="25"
-                     WidthRequest="25"></Image>
-                  <Label 
+                         <Image
+                             HeightRequest="25"
+                             WidthRequest="25"></Image>
+                          <Label 
                         
-                        Text="Configuracion"
-                        TextColor="DarkGray">
-                            <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Profile"/>
-                        </Label.GestureRecognizers>
-                    </Label>
+                                Text="Configuracion"
+                                TextColor="DarkGray">
+                                    <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Config"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-             </StackLayout>
+                     </StackLayout>
 
 
-               <StackLayout
-                 Orientation="Horizontal"
-                 >
+                       <StackLayout
+                         Orientation="Horizontal"
+                         >
 
-                 <Image
-                     HeightRequest="25"
-                     WidthRequest="25"></Image>
-                  <Label 
+                         <Image
+                             HeightRequest="25"
+                             WidthRequest="25"></Image>
+                          <Label 
                         
-                        Text="Pagos"
-                        TextColor="DarkGray">
-                            <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Profile"/>
-                        </Label.GestureRecognizers>
-                    </Label>
+                                Text="Pagos"
+                                TextColor="DarkGray">
+                                    <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Profile"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-             </StackLayout>
+                     </StackLayout>
 
-             <BoxView
-                 HeightRequest="1"
-                 BackgroundColor="DarkGray"
-                 />
+                     <BoxView
+                         HeightRequest="1"
+                         BackgroundColor="DarkGray"
+                         />
 
 
-               <StackLayout
-                 Orientation="Horizontal"
-                 >
+                       <StackLayout
+                         Orientation="Horizontal"
+                         >
 
-                 <Image
-                     HeightRequest="25"
-                     WidthRequest="25"></Image>
-                  <Label 
+                         <Image
+                             HeightRequest="25"
+                             WidthRequest="25"></Image>
+                          <Label 
                         
-                        Text="Cerrar sesion"
-                        TextColor="DarkGray">
-                            <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_LogOut"/>
-                        </Label.GestureRecognizers>
-                    </Label>
+                                Text="Cerrar sesion"
+                                TextColor="DarkGray">
+                                    <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_LogOut"/>
+                                </Label.GestureRecognizers>
+                            </Label>
 
-             </StackLayout>
-
+                     </StackLayout>
+                 </StackLayout>
     </StackLayout>
     </ContentPage.Content>
 </ContentPage>
