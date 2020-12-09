@@ -58,7 +58,7 @@
                    Text="Cerrar sesion"
                    x:Name="btnLogOut"
                    HorizontalOptions="EndAndExpand"
-                   Clicked="btnChangeTheme_Clicked"
+                   Command="{Binding LogoutCommand}"
                    />
 
            </StackLayout>

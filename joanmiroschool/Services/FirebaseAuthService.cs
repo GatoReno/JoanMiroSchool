@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using joanmiroschool.Abstractions;
+using joanmiroschool.View;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -57,7 +58,9 @@ namespace joanmiroschool.Services
         {
             UserDialogs.Instance.ShowLoading();
             auth.LogOut();
+            Preferences.Set("AccountEmail", "");
 
+            Application.Current.MainPage = new LoginPage();
             UserDialogs.Instance.HideLoading();
         }
 

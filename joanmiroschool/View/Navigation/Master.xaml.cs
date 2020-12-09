@@ -34,7 +34,6 @@ namespace joanmiroschool.View.Navigation
         {
             App.MasterD.IsPresented = false;
             FirebaseAuthService.LogOut();
-            Application.Current.MainPage = new LoginPage();
         }
     }
 }
