@@ -12,12 +12,16 @@
                     <StackLayout VerticalOptions="Center">
                         <Label
                             TextColor="Gray"
-                            Text="students"
+                            Text="Alumnos inscritos"
                             />
-                        <ListView>
+                        <ListView
+                            BackgroundColor="{AppThemeBinding Light=White, Dark='#272829'}"
+                            >
                             <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
+                                <DataTemplate                                     
+                                    >
+                                    <ViewCell                                         
+                                        >
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"/>

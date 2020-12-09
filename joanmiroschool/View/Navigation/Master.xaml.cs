@@ -12,6 +12,10 @@ namespace joanmiroschool.View.Navigation
         public Master()
         {
             InitializeComponent();
+            AccountIcon.Source = ImageSource.FromResource("joanmiroschool.Images.icons.usericon_w.png");
+            LogoutIcon.Source = ImageSource.FromResource("joanmiroschool.Images.icons.logouticon.png");
+            StatementsIcon.Source = ImageSource.FromResource("joanmiroschool.Images.icons.statementicon_w.png");
+            ConfigIcon.Source = ImageSource.FromResource("joanmiroschool.Images.icons.gearicon_w.png");
         }
 
         void TapGestureRecognizer_Tapped_Profile(System.Object sender, System.EventArgs e)

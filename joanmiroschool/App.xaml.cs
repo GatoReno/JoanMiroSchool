@@ -17,7 +17,7 @@ namespace joanmiroschool
             InitializeComponent();
             
 
-            UserDialogs.Instance.ShowLoading();
+           
             //Themes
             var prefTheme = Preferences.Get("Theme", string.Empty);
             if (string.IsNullOrEmpty(prefTheme))
@@ -35,6 +35,8 @@ namespace joanmiroschool
                     Application.Current.UserAppTheme = OSAppTheme.Light;
                 }
             }
+
+            //UserDialogs.Instance.ShowLoading();
             //Auth
             bool au = FirebaseAuthService.IsAuthenticated();
             if (!au)
@@ -45,7 +47,7 @@ namespace joanmiroschool
                 MainPage = new MainPage();
             }
           
-            UserDialogs.Instance.HideLoading();
+           // UserDialogs.Instance.HideLoading();
         }
 
         protected override void OnStart()

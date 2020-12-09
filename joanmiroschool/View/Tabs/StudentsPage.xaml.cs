@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using joanmiroschool.ViewModel;
 using Xamarin.Forms;
 
 namespace joanmiroschool.View.Tabs
@@ -10,6 +10,11 @@ namespace joanmiroschool.View.Tabs
         public StudentsPage()
         {
             InitializeComponent();
+            BindingContext = new StudentsViewModel();
+        }
+
+        void ListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
         }
     }
 }

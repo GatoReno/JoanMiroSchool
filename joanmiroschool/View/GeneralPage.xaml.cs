@@ -15,9 +15,12 @@ namespace joanmiroschool.View
         public GeneralPage()
         {
             InitializeComponent();
-            tabBottom.BarBackgroundColor = Color.FromHex("#5f6a75");
-            tabBottom.BarTextColor = Color.White;//.FromHex("#272829");
-            //tabBottom.SelectedTabColor = Color.FromHex("#272829");
+            tabBottom.BarBackgroundColor = Color.FromHex("#e3e6e8");
+            tabBottom.BarTextColor = Color.DarkGray;//.FromHex("#272829");
+            //tabBottom.SelectedTabColor = Color.FromHex("#272829");            
+            tabStudents.IconImageSource = ImageSource.FromResource("joanmiroschool.Images.icons.kidsicon_w.png");
+            tabAnnoucements.IconImageSource = ImageSource.FromResource("joanmiroschool.Images.icons.annoucementicon_w.png");
+            tabEvents.IconImageSource = ImageSource.FromResource("joanmiroschool.Images.icons.eventsicon_w.png");
         }
     }
 }

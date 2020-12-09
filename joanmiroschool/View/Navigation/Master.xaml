@@ -15,10 +15,10 @@
           >
          
              <StackLayout
-                  Margin="0,30"
+                  Margin="0,60"
                  >
                      <StackLayout
-                
+                        Padding="10"
                          Orientation="Horizontal"
                          >
 
@@ -29,7 +29,7 @@
 
                          </Image>-->
                          <Image
-                            Source=""
+                            x:Name="AccountIcon"
                              HeightRequest="25"
                              WidthRequest="25">
 
@@ -47,10 +47,12 @@
 
 
                        <StackLayout
+                           Padding="10"
                          Orientation="Horizontal"
                          >
 
                          <Image
+                             x:Name="ConfigIcon"
                              HeightRequest="25"
                              WidthRequest="25"></Image>
                           <Label 
@@ -66,10 +68,12 @@
 
 
                        <StackLayout
+                           Padding="10"
                          Orientation="Horizontal"
                          >
 
                          <Image
+                             x:Name="StatementsIcon"
                              HeightRequest="25"
                              WidthRequest="25"></Image>
                           <Label 
@@ -90,10 +94,12 @@
 
 
                        <StackLayout
+                           Padding="10"
                          Orientation="Horizontal"
                          >
 
                          <Image
+                             x:Name="LogoutIcon"
                              HeightRequest="25"
                              WidthRequest="25"></Image>
                           <Label 

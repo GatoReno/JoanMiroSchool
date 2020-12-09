@@ -7,9 +7,9 @@
            xmlns:tabx="clr-namespace:joanmiroschool.View.Tabs"
             x:Class="joanmiroschool.View.GeneralPage">
     <!--xme can be added as references or inline-->
-    <tabx:StudentsPage Title="Alumnos"/>
-    <tabx:EventsPage Title="Eventos"/>
-    <tabx:AnnouncesPages Title="Anuncios"/>
+    <tabx:StudentsPage x:Name="tabStudents" Title="Alumnos"/>
+    <tabx:EventsPage x:Name="tabEvents" Title="Eventos"/>
+    <tabx:AnnouncesPages x:Name="tabAnnoucements" Title="Anuncios"/>
     
    
 </TabbedPage>
