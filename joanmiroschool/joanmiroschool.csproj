@@ -22,5 +22,26 @@
     <Folder Include="Services\" />
     <Folder Include="View\Tabs\" />
     <Folder Include="View\Navigation\" />
+    <Folder Include="Images\" />
+    <Folder Include="Images\icons\" />
+    <Folder Include="View\Students\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\icons\kidsicon_w.png" />
+    <None Remove="Images\icons\gearicon_w.png" />
+    <None Remove="Images\icons\eventsicon_w.png" />
+    <None Remove="Images\icons\statementicon_w.png" />
+    <None Remove="Images\icons\usericon_w.png" />
+    <None Remove="Images\icons\annoucementicon_w.png" />
+    <None Remove="Images\icons\logouticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\icons\kidsicon_w.png" />
+    <EmbeddedResource Include="Images\icons\gearicon_w.png" />
+    <EmbeddedResource Include="Images\icons\eventsicon_w.png" />
+    <EmbeddedResource Include="Images\icons\statementicon_w.png" />
+    <EmbeddedResource Include="Images\icons\usericon_w.png" />
+    <EmbeddedResource Include="Images\icons\annoucementicon_w.png" />
+    <EmbeddedResource Include="Images\icons\logouticon.png" />
   </ItemGroup>
 </Project>

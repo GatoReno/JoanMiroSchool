@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              Title="Cuenta"
-             
+             xmlns:local="clr-namespace:joanmiroschool"
              x:Class="joanmiroschool.View.Navigation.Master">
     <ContentPage.Content>
 
@@ -22,8 +22,14 @@
                          Orientation="Horizontal"
                          >
 
+                         <!--<Image
+                            Source="{local:ImageResource  joanmiroschool.Images.icons.annoucementicon_w.png }"
+                             HeightRequest="25"
+                             WidthRequest="25">
+
+                         </Image>-->
                          <Image
-                    
+                            Source=""
                              HeightRequest="25"
                              WidthRequest="25">
 

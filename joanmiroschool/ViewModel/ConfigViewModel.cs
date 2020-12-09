@@ -16,7 +16,8 @@ namespace joanmiroschool.ViewModel
             set
             {
                 _theme = value;
-                 
+
+                OnPropertyChanged("ThemeName");
             }
         }
         public ConfigViewModel()
@@ -25,5 +26,11 @@ namespace joanmiroschool.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }
