@@ -21,6 +21,7 @@ namespace joanmiroschool.View.Navigation
         void TapGestureRecognizer_Tapped_Profile(System.Object sender, System.EventArgs e)
         {
             App.MasterD.IsPresented = false;
+            App.MasterD.Detail.Navigation.PushAsync(new ProfilePage());
         }
 
         void TapGestureRecognizer_Tapped_Config(System.Object sender, System.EventArgs e)

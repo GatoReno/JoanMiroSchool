@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using joanmiroschool.ViewModel;
 using Xamarin.Forms;
 
 namespace joanmiroschool.View
@@ -10,6 +10,7 @@ namespace joanmiroschool.View
         public ProfilePage()
         {
             InitializeComponent();
+            BindingContext = new AccountViewModel();
         }
     }
 }
