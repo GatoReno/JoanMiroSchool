@@ -1,9 +1,78 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="joanmiroschool.View.ProfilePage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
+        <StackLayout
+            Margin="0,10"
+            Padding="20">
             <Label
-                Text="Profile"
+                TextColor="Gray"
+                Text="Datos de cuenta"
+                FontSize="Title"
+                />
+
+              <StackLayout>
+                <Label
+                    TextColor="Gray"
+                Text="Name"
+                />
+                <Label
+                    TextColor="Gray"
+                Text="{Binding Name , Mode=TwoWay}"
+                />
+            </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+            <StackLayout>
+                <Label 
+                    TextColor="Gray"
+                Text="Email"
+                />
+                <Label
+                    TextColor="Gray"
+                Text="{Binding Email , Mode=TwoWay}" 
+                />
+            </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+
+          
+
+            <StackLayout>
+                <Label
+                    TextColor="Gray"
+                Text="Phone"
+                />
+                <Label
+                    TextColor="Gray"
+                Text="{Binding Phone , Mode=TwoWay}"
+                />
+            </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray" 
+                />
+
+             <StackLayout>
+                <Label
+                    TextColor="Gray" 
+                Text="Estado"   
+                />
+
+                <Label 
+                    TextColor="Gray"
+                Text="{Binding Estado , Mode=TwoWay}"
+                />
+            </StackLayout>
+
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray" 
                 />
         </StackLayout>
     </ContentPage.Content>

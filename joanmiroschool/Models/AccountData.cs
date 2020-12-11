@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 
 namespace joanmiroschool.Models
 {
-    public class AccountList
-    {
-        public IList<AccountData> AccList { get; set; }
-    }
+    
     
     public class AccountData
     {

@@ -81,7 +81,7 @@
                                 Text="Pagos"
                                 TextColor="DarkGray">
                                     <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Profile"/>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Statements"/>
                                 </Label.GestureRecognizers>
                             </Label>
 

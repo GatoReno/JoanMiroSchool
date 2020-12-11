@@ -36,18 +36,19 @@ namespace joanmiroschool
                 }
             }
 
-            //UserDialogs.Instance.ShowLoading();
-            //Auth
-            //bool au = FirebaseAuthService.IsAuthenticated();
-            //if (!au)
-            //{
-            //    MainPage = new LoginPage();
-            //}
-            //else {
-            //    MainPage = new MainPage();
-            //}
-            MainPage = new ProfilePage();
-           // UserDialogs.Instance.HideLoading();
+            
+            //authentification 
+            bool au = FirebaseAuthService.IsAuthenticated();
+            if (!au)
+            {
+                MainPage = new LoginPage();
+            }
+            else
+            {
+                MainPage = new MainPage();
+            }
+            //MainPage = new ProfilePage();
+           
         }
 
         protected override void OnStart()

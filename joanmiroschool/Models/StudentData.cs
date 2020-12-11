@@ -7,9 +7,7 @@ using Newtonsoft.Json.Converters;
 
 namespace joanmiroschool.Models
 {
-    public class StudentList {
-        public IList<StudentData> StList{get;set;}
-    }
+     
     public class StudentData
     {
         [JsonProperty("id")]

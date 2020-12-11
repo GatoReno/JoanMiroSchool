@@ -11,7 +11,7 @@ namespace joanmiroschool.View
         {
             InitializeComponent();
             BindingContext = new LogsViewModel();
-        }
+         }
 
         void TapGestureRecognizer_Tapped_RegisterLbl(System.Object sender, System.EventArgs e)
         {

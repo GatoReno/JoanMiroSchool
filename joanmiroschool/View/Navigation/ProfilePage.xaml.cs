@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Acr.UserDialogs;
 using joanmiroschool.ViewModel;
 using Xamarin.Forms;
 
@@ -11,6 +12,7 @@ namespace joanmiroschool.View
         {
             InitializeComponent();
             BindingContext = new AccountViewModel();
-        }
+         }
+        
     }
 }

@@ -20,7 +20,8 @@
                 <Image
                     HeightRequest="150"
                     Margin="10,10,10,10"
-                    Source="jmlogo.png"/>
+                    Source="{AppThemeBinding Light=Logo-Joan-Miro_FULLHD.png,
+                    Dark=Logo-JM-EscalaGrises.png}"/>
                 <Entry
                     Keyboard="Email"
                     Text="{Binding Email, Mode=TwoWay}"
@@ -98,7 +99,8 @@
                 <Image
                     HeightRequest="150"
                     Margin="10,10,10,10"
-                    Source="jmlogo.png"/>
+                    Source="{AppThemeBinding Light=Logo-Joan-Miro_FULLHD.png,
+                    Dark=Logo-JM-EscalaGrises.png}"/>
 
                  <StackLayout
                     Orientation="Horizontal"

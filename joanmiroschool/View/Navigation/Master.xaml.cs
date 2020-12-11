@@ -36,5 +36,11 @@ namespace joanmiroschool.View.Navigation
             App.MasterD.IsPresented = false;
             FirebaseAuthService.LogOut();
         }
+
+        void TapGestureRecognizer_Tapped_Statements(System.Object sender, System.EventArgs e)
+        {
+            App.MasterD.IsPresented = false;
+            App.MasterD.Detail.Navigation.PushAsync(new StatementsPages());
+        }
     }
 }

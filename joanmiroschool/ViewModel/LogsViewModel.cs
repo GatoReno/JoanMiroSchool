@@ -2,7 +2,10 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using Acr.UserDialogs;
+using joanmiroschool.Abstractions;
 using joanmiroschool.Services;
+using Refit;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace joanmiroschool.ViewModel
@@ -89,14 +92,18 @@ namespace joanmiroschool.ViewModel
         public ICommand LoginCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ResetCommand { get; set; }
+        //private IJMServices _iJMService { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public LogsViewModel()
+        public LogsViewModel(
+            //IJMServices jMServices)
+            )
         {
             LoginCommand = new Command(Login, CanLoginExecute);
             RegisterCommand = new Command(Register, CanRegisterExecute);
             ResetCommand = new Command(ResetPassword);
+            //_iJMService = jMServices;
         }
 
         private  void ResetPassword(object obj)
@@ -150,7 +157,23 @@ namespace joanmiroschool.ViewModel
                bool au =  await FirebaseAuthService.AuthenticateUser(Email, Password);
                 if (au)
                 {
-                    Application.Current.MainPage = new MainPage();
+                    try
+                    {
+                        var accountData = RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com");
+                        var response = await accountData.GetAccount("joanahernandez2507@gmail.com");
+                        var resp = response[0]; 
+
+                        Preferences.Set("Estado", resp.Estado);
+                        Preferences.Set("Phone", resp.Phone);
+                        Preferences.Set("Name", resp.Name);
+
+                        Application.Current.MainPage = new MainPage();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Error", $"{ex.ToString()} ", "ok");
+                    }
                 }
             }
             catch (Exception ex)
