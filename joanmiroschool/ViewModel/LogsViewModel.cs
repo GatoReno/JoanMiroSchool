@@ -92,24 +92,28 @@ namespace joanmiroschool.ViewModel
         public ICommand LoginCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ResetCommand { get; set; }
-        //private IJMServices _iJMService { get; set; }
 
+        private IJMServices _iJMService { get; set; }
+
+        private IFiBAuth _fiBAuth { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         public LogsViewModel(
-            //IJMServices jMServices)
+            IJMServices jMServices,
+            IFiBAuth fiBAuth
             )
         {
             LoginCommand = new Command(Login, CanLoginExecute);
             RegisterCommand = new Command(Register, CanRegisterExecute);
             ResetCommand = new Command(ResetPassword);
-            //_iJMService = jMServices;
+            _iJMService = jMServices;
+            _fiBAuth = fiBAuth; 
         }
 
         private  void ResetPassword(object obj)
         {
-           
-             FirebaseAuthService.RestartPassword(Email);
+
+            _fiBAuth.ResetPassword(Email);
         }
 
         private bool CanRegisterExecute(object arg)
@@ -130,7 +134,7 @@ namespace joanmiroschool.ViewModel
                 try
                 {
                     UserDialogs.Instance.ShowLoading();
-                    await FirebaseAuthService.RegisterUser(Name, Email, Password);
+                    await _fiBAuth.RegisterUser(Name, Email, Password);
                     await App.Current.MainPage.DisplayAlert("Exito","Usuario registrado, ya puedes iniciar sesion","ok");
 
                 }
@@ -154,15 +158,13 @@ namespace joanmiroschool.ViewModel
             UserDialogs.Instance.ShowLoading();
             try
             {
-               bool au =  await FirebaseAuthService.AuthenticateUser(Email, Password);
+               bool au =  await _fiBAuth.AuthenticateUser(Email, Password);
                 if (au)
                 {
                     try
-                    {
-                        var accountData = RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com");
-                        var response = await accountData.GetAccount("joanahernandez2507@gmail.com");
-                        var resp = response[0]; 
-
+                    {                        
+                        var response = await _iJMService.GetAccount("joanahernandez2507@gmail.com");
+                        var resp = response[0];
                         Preferences.Set("Estado", resp.Estado);
                         Preferences.Set("Phone", resp.Phone);
                         Preferences.Set("Name", resp.Name);

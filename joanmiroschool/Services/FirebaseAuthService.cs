@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace joanmiroschool.Services
 {
-    public class FirebaseAuthService
+    public class FirebaseAuthService //: IFiBAuth
     {
         private static IFiBAuth auth = DependencyService.Get<IFiBAuth>();
 

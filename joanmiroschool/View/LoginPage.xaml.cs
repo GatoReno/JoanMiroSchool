@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using joanmiroschool.Abstractions;
+using joanmiroschool.Services;
 using joanmiroschool.ViewModel;
+using Refit;
 using Xamarin.Forms;
 
 namespace joanmiroschool.View
@@ -9,8 +12,16 @@ namespace joanmiroschool.View
     {
         public LoginPage()
         {
+
             InitializeComponent();
-            BindingContext = new LogsViewModel();
+
+            
+            
+            
+            BindingContext = new LogsViewModel(
+                RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com"),
+                DependencyService.Get<IFiBAuth>()
+                );
          }
 
         void TapGestureRecognizer_Tapped_RegisterLbl(System.Object sender, System.EventArgs e)

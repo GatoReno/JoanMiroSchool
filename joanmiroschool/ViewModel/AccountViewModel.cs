@@ -68,7 +68,7 @@ namespace joanmiroschool.ViewModel
         {
            
          
-            GetAccount(email_);
+            //GetAccount(email_);
             Email = Preferences.Get("AccountEmail", string.Empty);
             Estado = Preferences.Get("Estado", string.Empty);
             Phone = Preferences.Get("Phone", string.Empty);
