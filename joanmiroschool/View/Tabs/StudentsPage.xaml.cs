@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using joanmiroschool.Abstractions;
+using joanmiroschool.Models;
 using joanmiroschool.ViewModel;
 using Refit;
 using Xamarin.Forms;
@@ -19,15 +20,14 @@ namespace joanmiroschool.View.Tabs
           
         }
 
-        protected override void OnAppearing()
+        async void ListView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            base.OnAppearing();
-             
-
+            var st = e.Item as StudentData;
+            await App.MasterD.Detail.Navigation.PushAsync(
+                new Students.DetailsPage(st.Id.ToString()));
         }
 
-        void ListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-        {
-        }
+
+       
     }
 }

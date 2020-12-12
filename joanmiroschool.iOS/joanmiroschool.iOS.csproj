@@ -138,8 +138,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
-    <BundleResource Include="Resources\Logo-JM-EscalaGrises.png" />
-    <BundleResource Include="Resources\Logo-Joan-Miro_FULLHD.png" />
+    <BundleResource Include="Resources\LogoEscalaGrises.png" />
+    <BundleResource Include="Resources\Logo.png" />
     <BundleResource Include="Resources\Logotipo.png" />
   </ItemGroup>
   <ItemGroup>

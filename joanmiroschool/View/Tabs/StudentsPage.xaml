@@ -17,6 +17,7 @@
                         <ListView
                             Margin="0,10"
                             ItemsSource="{Binding Students}"
+                            ItemTapped="ListView_ItemTapped"
                             BackgroundColor="{AppThemeBinding Light=White, Dark='#272829'}"
                             >
                             <ListView.ItemTemplate>

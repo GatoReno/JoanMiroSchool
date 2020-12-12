@@ -166,25 +166,29 @@ namespace joanmiroschool.ViewModel
                         var response = await _iJMService.GetAccount("joanahernandez2507@gmail.com");
                         var resp = response[0];
                         Preferences.Set("Estado", resp.Estado);
-                        Preferences.Set("Phone", resp.Phone);
+                        Preferences.Set("Phone", resp.Phone.ToString());
                         Preferences.Set("Name", resp.Name);
-                        Preferences.Set("Id", resp.Id);
+                        Preferences.Set("Id", resp.Id.ToString());
                         Preferences.Set("Email", Email);
 
-                        Application.Current.MainPage = new MainPage();
 
+                        UserDialogs.Instance.HideLoading();
+                        Application.Current.MainPage = new MainPage();
+                        
                     }
                     catch (Exception ex)
                     {
                         await App.Current.MainPage.DisplayAlert("Error", $"{ex.ToString()} ", "ok");
+                        UserDialogs.Instance.HideLoading();
                     }
                 }
             }
             catch (Exception ex)
             {
                 await App.Current.MainPage.DisplayAlert("Error", $"{ex.ToString()} ", "ok");
+                UserDialogs.Instance.HideLoading();
             }
-            UserDialogs.Instance.HideLoading();
+           
         }
 
         private void OnPropertyChanged(string propertyName)

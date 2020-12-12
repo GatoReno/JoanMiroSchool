@@ -99,11 +99,11 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\Logo-JM-EscalaGrises.png">
+    <AndroidResource Include="Resources\drawable\LogoEscalaGrises.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\Logo-Joan-Miro_FULLHD.png">
+    <AndroidResource Include="Resources\drawable\Logo.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
