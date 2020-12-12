@@ -8,7 +8,7 @@ namespace joanmiroschool.ViewModel
 {
     public class AccountViewModel :  INotifyPropertyChanged
     {
-        private string  email_, name_,phone_ ,estado_ ;
+        private string  _email, _name,_phone ,_estado ;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -16,11 +16,11 @@ namespace joanmiroschool.ViewModel
         {
             get
             {
-                return email_;
+                return _email;
             }
             set
             {
-                email_ = value;
+                _email = value;
                 OnPropertyChanged("Email"); 
             }
         }
@@ -29,11 +29,11 @@ namespace joanmiroschool.ViewModel
         {
             get
             {
-                return phone_;
+                return _phone;
             }
             set
             {
-                phone_ = value;
+                _phone = value;
                 OnPropertyChanged("Phone");
             }
         }
@@ -42,11 +42,11 @@ namespace joanmiroschool.ViewModel
         {
             get
             {
-                return name_;
+                return _name;
             }
             set
             {
-                name_ = value;
+                _name = value;
                 OnPropertyChanged("Name");
             }
         }
@@ -55,49 +55,23 @@ namespace joanmiroschool.ViewModel
         {
             get
             {
-                return estado_;
+                return _estado;
             }
             set
             {
-                estado_ = value;
+                _estado = value;
                 OnPropertyChanged("Estado");
             }
         }
 
         public AccountViewModel()
-        {
-           
-         
-            //GetAccount(email_);
-            Email = Preferences.Get("AccountEmail", string.Empty);
+        {  
+            Email = Preferences.Get("Email", string.Empty);
             Estado = Preferences.Get("Estado", string.Empty);
             Phone = Preferences.Get("Phone", string.Empty);
             Name = Preferences.Get("Name", string.Empty);
         }
-        
-
-        async void GetAccount(string email)
-        {
-            var accountData = RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com");
-            try
-            {
-                var response = await accountData.GetAccount("joanahernandez2507@gmail.com");
-                var resp = response[0];
-                Estado = resp.Estado;
-                Phone = resp.Phone;
-                Name = resp.Name;
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            
- 
-        }
-
-
-
+         
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

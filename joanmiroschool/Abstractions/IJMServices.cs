@@ -8,8 +8,8 @@ namespace joanmiroschool.Abstractions
 {
     public interface IJMServices
     {
-        [Get("/t/client/alumnos/{email}")]
-        Task<List<StudentData>> GetStudents(string email);
+        [Get("/t/client/alumnos/{id}")]
+        Task<List<StudentData>> GetStudents(string id);
 
         [Get("/t/client-by-mail/{email}")]
         Task<List<AccountData>> GetAccount(string email);

@@ -44,7 +44,7 @@ namespace joanmiroschool.ViewModel
 
         public ConfigViewModel()
         {
-              _accountEmail = Preferences.Get("AccountEmail", string.Empty);
+            AccountEmail = Preferences.Get("Email", string.Empty);
             LogoutCommand = new Command(async () => await OnLogout());
         }
 

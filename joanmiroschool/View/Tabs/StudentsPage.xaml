@@ -15,24 +15,48 @@
                             Text="Alumnos inscritos"
                             />
                         <ListView
+                            Margin="0,10"
+                            ItemsSource="{Binding Students}"
                             BackgroundColor="{AppThemeBinding Light=White, Dark='#272829'}"
                             >
                             <ListView.ItemTemplate>
-                                <DataTemplate                                     
+                                <DataTemplate
+                                    
                                     >
-                                    <ViewCell                                         
+                                    <ViewCell
+                                        
                                         >
-                                        <Grid>
+                                        <Grid
+                                            BackgroundColor="{AppThemeBinding Light=White, Dark='#272829'}"
+                                            Padding="4">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                 <ColumnDefinition Width="Auto"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Label Grid.Column="0"
-                                                   Text=""
+                                                   FontSize="Small"
+                                                   TextColor="Gray"
+                                                   Text=" {Binding Name}"
                                                    ></Label>
                                             <Label
-                                                Text=""
+                                                Text="{Binding LastnameP}"
+                                                FontSize="Small"
+                                                   TextColor="Gray"
                                                 Grid.Column="1"></Label>
+                                            <Label
+                                                Text="{Binding LastnameM}"
+                                                FontSize="Small"
+                                                   TextColor="Gray"
+                                                Grid.Column="2"></Label>
+
+                                            <Label
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="{Binding Nivel}"
+                                                   TextColor="Gray"
+                                                FontSize="Small"
+                                                Grid.Column="3"></Label>
                                         </Grid>
                                     </ViewCell>
                                 </DataTemplate>

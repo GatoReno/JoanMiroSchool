@@ -168,6 +168,8 @@ namespace joanmiroschool.ViewModel
                         Preferences.Set("Estado", resp.Estado);
                         Preferences.Set("Phone", resp.Phone);
                         Preferences.Set("Name", resp.Name);
+                        Preferences.Set("Id", resp.Id);
+                        Preferences.Set("Email", Email);
 
                         Application.Current.MainPage = new MainPage();
 
