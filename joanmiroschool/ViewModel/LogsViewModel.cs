@@ -163,7 +163,7 @@ namespace joanmiroschool.ViewModel
                 {
                     try
                     {                        
-                        var response = await _iJMService.GetAccount("joanahernandez2507@gmail.com");
+                        var response = await _iJMService.GetAccount("cruzhernandez1006@gmail.com");
                         var resp = response[0];
                         Preferences.Set("Estado", resp.Estado);
                         Preferences.Set("Phone", resp.Phone.ToString());

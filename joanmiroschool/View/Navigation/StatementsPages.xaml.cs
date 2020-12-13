@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using joanmiroschool.Abstractions;
 using joanmiroschool.ViewModel;
 using Refit;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace joanmiroschool.View
@@ -12,8 +13,9 @@ namespace joanmiroschool.View
         public StatementsPages()
         {
             InitializeComponent();
-            BindingContext = new StudentsViewModel(
-                RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com"));
+            BindingContext = new StatementsViewModel(
+                RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com")
+                , Preferences.Get("Id", string.Empty));
         }
     }
 }

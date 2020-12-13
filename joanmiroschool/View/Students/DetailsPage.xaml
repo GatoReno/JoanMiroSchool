@@ -1,11 +1,146 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="joanmiroschool.View.Students.DetailsPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             BackgroundColor="{AppThemeBinding Light=White, Dark='#272829'}"
+             x:Class="joanmiroschool.View.Students.DetailsPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Orientation="Vertical"
+            >
 
-            <Label
-                Text="student data"
-                ></Label>
+
+            <StackLayout
+                Orientation="Vertical"
+                 Padding="10"
+                >
+
+                <Image
+                    HorizontalOptions="EndAndExpand"
+                    x:Name="ImgLogo"
+                    HeightRequest="45"
+                    WidthRequest="45"
+                    />
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Datos de alumno"
+                    FontSize="Title"
+                    TextColor="Gray"
+                    />
+            </StackLayout>
+            <StackLayout
+                Padding="20"
+                >
+
+           <StackLayout
+               Margin="0,0,30,0"
+               Orientation="Horizontal"
+               >
+               <Label
+                   Text="Nombre"
+                   TextColor="Gray"
+                   />
+               <Label
+                   Text="{Binding Name}"
+                   TextColor="Gray"
+                   />
+
+           </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+            <StackLayout
+               Orientation="Horizontal"
+               >
+               <Label
+                   Text="Apellido Paterno"
+                   TextColor="Gray"
+                   />
+               <Label
+                   TextColor="Gray"
+                   Text="{Binding LastNameP}"
+                   />
+
+           </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+            <StackLayout
+               Orientation="Horizontal"
+               >
+               <Label
+                   Text="Apellido Materno"
+                   TextColor="Gray"
+                   />
+               <Label
+                   Text="{Binding LastNameM}"
+                   TextColor="Gray"
+                   />
+
+           </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+              <StackLayout
+               Orientation="Horizontal"
+               >
+               <Label
+                   Text="Grado"
+                   TextColor="Gray"
+                   />
+               <Label
+                   Text="{Binding Nivel}"
+                   TextColor="Gray"
+                   />
+
+           </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+            <StackLayout
+               Orientation="Horizontal"
+               >
+               <Label
+                   Text="Estado"
+                   TextColor="Gray"
+                   />
+               <Label
+                   HorizontalOptions="EndAndExpand"
+                   Text="{Binding Estado}"
+                   TextColor="Gray"
+                   />
+
+           </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
+
+                 <StackLayout
+               Orientation="Horizontal"
+               >
+               <Label
+                   Text="Estado"
+                   TextColor="Gray"
+                   />
+               <Label
+                   HorizontalOptions="EndAndExpand"
+                   Text="{Binding Estado}"
+                   TextColor="Gray"
+                   />
+
+           </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                BackgroundColor="Gray"
+                />
         </StackLayout>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

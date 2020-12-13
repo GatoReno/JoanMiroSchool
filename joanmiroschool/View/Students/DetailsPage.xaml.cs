@@ -12,6 +12,7 @@ namespace joanmiroschool.View.Students
         public DetailsPage(string id)
         {
             InitializeComponent();
+            ImgLogo.Source = ImageSource.FromResource("joanmiroschool.Images.icons.kidsicon_w.png");
             BindingContext = new StudentDetailViewModel(RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com"),id);
         }
     }

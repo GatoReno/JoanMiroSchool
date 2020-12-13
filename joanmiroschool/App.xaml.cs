@@ -15,10 +15,11 @@ namespace joanmiroschool
         public App()
         {
             InitializeComponent();
-            
 
-           
+
+
             //Themes
+            #region themes
             var prefTheme = Preferences.Get("Theme", string.Empty);
             if (string.IsNullOrEmpty(prefTheme))
             {
@@ -35,8 +36,8 @@ namespace joanmiroschool
                     Application.Current.UserAppTheme = OSAppTheme.Light;
                 }
             }
+            #endregion
 
-            
             //authentification 
             bool au = FirebaseAuthService.IsAuthenticated();
             if (!au)

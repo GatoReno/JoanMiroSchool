@@ -13,8 +13,12 @@ namespace joanmiroschool.Abstractions
 
         [Get("/t/client-by-mail/{email}")]
         Task<List<AccountData>> GetAccount(string email);
-        //Task<IList<Event>> GetEvents();
-        //Task<IList<Annoucement>> GetAnnouncements();
-        //Task<AccountData> GetAccount(string email);
+
+        [Get("/alumno/{id}")]
+        Task<List<StudentData>> GetDataStudent(string id);
+
+        [Get("/cliente-pagos-all/{id}")]
+        Task<List<StatementData>> GetStatements(string id);
+
     }
 }

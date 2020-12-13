@@ -1,0 +1,6 @@
+﻿ /alumno_pagos/{id}
+/alumno/{id}
+/alumno-cartera/{id}
+/client/pagos/{id}
+/pago/data/{id}
+/cliente-pagos-all/{id}
