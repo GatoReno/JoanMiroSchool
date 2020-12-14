@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Acr.UserDialogs;
+using joanmiroschool.Helpers;
 using joanmiroschool.Services;
 using joanmiroschool.View;
 using Xamarin.Essentials;
@@ -38,6 +40,9 @@ namespace joanmiroschool
             }
             #endregion
 
+           
+
+            #region auth
             //authentification 
             bool au = FirebaseAuthService.IsAuthenticated();
             if (!au)
@@ -49,7 +54,8 @@ namespace joanmiroschool
                 MainPage = new MainPage();
             }
             //MainPage = new ProfilePage();
-           
+            #endregion 
+
         }
 
         protected override void OnStart()

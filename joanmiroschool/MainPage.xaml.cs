@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using joanmiroschool.Helpers;
 using joanmiroschool.Services;
 using joanmiroschool.View;
 using joanmiroschool.View.Navigation;
@@ -21,6 +22,14 @@ namespace joanmiroschool
             this.Master = new Master();
             this.Detail = new NavigationPage(new GeneralPage());
             App.MasterD = this;
+            #region connectivity
+            var conn = ConetctivityManager.CheckConnectivity();
+
+            if (!conn)
+            {
+                ConetctivityManager.ConnectivityAlert();
+            }
+            #endregion
 
             //UserDialogs.Instance.ShowLoading();
             //bool au = FirebaseAuthService.IsAuthenticated();
@@ -29,7 +38,7 @@ namespace joanmiroschool
             //    Application.Current.MainPage = new LoginPage();
             //}
             //UserDialogs.Instance.HideLoading();
-            
+
         }
     }
 }
