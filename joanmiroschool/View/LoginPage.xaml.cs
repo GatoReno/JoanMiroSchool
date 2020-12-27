@@ -20,23 +20,12 @@ namespace joanmiroschool.View
 
             #region connectivity
             var conn = ConetctivityManager.CheckConnectivity();
-            #endregion
+            
             if (!conn)
-            {
-                //await
-                //ConetctivityManager.ConnectivityAlert();
-                ConetctivityManager.ConnectivityAlert();
-                //Device.BeginInvokeOnMainThread(async () =>
-                //    {
-                //        await App.Current.MainPage.DisplayAlert("Error de conexion",
-                //            "Asegurece de estar conectado a wifi o activar los datos" +
-                //            " moviles para el correcto uso de esta aplicacion",
-                //        "ok");
-                //    }
-                //);
-
+            {              
+                ConetctivityManager.ConnectivityAlert();                
             }
-
+            #endregion
 
             BindingContext = new LogsViewModel(
                 RestService.For<IJMServices>("https://eliappjmadmin.herokuapp.com"),

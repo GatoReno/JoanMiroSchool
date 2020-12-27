@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using joanmiroschool.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,6 +21,15 @@ namespace joanmiroschool.View
             tabStudents.IconImageSource = ImageSource.FromResource("joanmiroschool.Images.icons.kidsicon_w.png");
             tabAnnoucements.IconImageSource = ImageSource.FromResource("joanmiroschool.Images.icons.annoucementicon_w.png");
             tabEvents.IconImageSource = ImageSource.FromResource("joanmiroschool.Images.icons.eventsicon_w.png");
+
+            #region connectivity
+            var conn = ConetctivityManager.CheckConnectivity();
+
+            if (!conn)
+            {
+                ConetctivityManager.ConnectivityAlert();
+            }
+            #endregion
         }
     }
 }
