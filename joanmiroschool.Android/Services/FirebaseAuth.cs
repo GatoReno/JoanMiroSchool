@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Firebase.Auth;
 using joanmiroschool.Abstractions;
 using Xamarin.Forms;
@@ -57,7 +58,15 @@ namespace joanmiroschool.Droid.Services
 
         public void ResetPassword(string email)
         {
-            Firebase.Auth.FirebaseAuth.Instance.SendPasswordResetEmail(email);
+            if (string.IsNullOrEmpty(email))
+            {
+                UserDialogs.Instance.Alert("Por favor agrega un mail para recuperar la contraseña", "Error", "Ok");
+            }
+            else
+            { 
+                Firebase.Auth.FirebaseAuth.Instance.SendPasswordResetEmail(email);
+                UserDialogs.Instance.Alert("Por favor confirme en su correo para reestablecer contraseña", "Solicitud de recuperacion enviada", "ok");
+            }
         }
 
         public async Task<bool> RegisterUser(string name, string email, string password )
