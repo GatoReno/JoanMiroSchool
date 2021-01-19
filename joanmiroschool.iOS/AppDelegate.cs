@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 using UserNotifications;
 using WindowsAzure.Messaging;
@@ -28,6 +29,7 @@ namespace joanmiroschool.iOS
             global::Xamarin.Forms.Forms.Init();
 
             Firebase.Core.App.Configure();
+            AnimationViewRenderer.Init();
             LoadApplication(new App());
 
             bool result = base.FinishedLaunching(app, options);

@@ -44,16 +44,16 @@ namespace joanmiroschool
 
             #region auth
             //authentification 
-            bool au = FirebaseAuthService.IsAuthenticated();
-            if (!au)
-            {
-                MainPage = new LoginPage();
-            }
-            else
-            {
-                MainPage = new MainPage();
-            }
-            //MainPage = new ProfilePage();
+            //bool au = FirebaseAuthService.IsAuthenticated();
+            //if (!au)
+            //{
+            //    MainPage = new LoginPage();
+            //}
+            //else
+            //{
+            //    MainPage = new MainPage();
+            //}
+            MainPage = new LottiePage();
             #endregion 
 
         }
