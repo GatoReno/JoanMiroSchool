@@ -6,11 +6,10 @@ using Xamarin.Essentials;
 
 namespace joanmiroschool.ViewModel
 {
-    public class AccountViewModel :  INotifyPropertyChanged
+    public class AccountViewModel :  BaseViewModel
     {
         private string  _email, _name,_phone ,_estado ;
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public string Email
         {
@@ -72,10 +71,7 @@ namespace joanmiroschool.ViewModel
             Name = Preferences.Get("Name", string.Empty);
         }
          
-        private void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+      
 
     }
 }

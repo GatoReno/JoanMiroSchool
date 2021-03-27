@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace joanmiroschool.ViewModel
 {
-    public class ConfigViewModel : INotifyPropertyChanged
+    public class ConfigViewModel : BaseViewModel
     {
         private string _theme, _accountEmail;
         public string ThemeName
@@ -57,12 +57,7 @@ namespace joanmiroschool.ViewModel
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+       
 
     }
 }
